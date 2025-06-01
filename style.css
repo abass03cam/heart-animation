@@ -1,0 +1,174 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(270deg, #ffe4ec, #ffd8f0, #fff5fa, #fff1f5, #fce1f0, #fddde7);
+        background-size: 1200% 1200%;
+        animation: gradientFlow 30s ease infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    @keyframes gradientFlow {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        25% {
+            background-position: 50% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        75% {
+            background-position: 50% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .heart-center {
+        font-size: 4rem;
+        animation: gentleBeat 5s ease-in-out infinite;
+        text-shadow: 0 0 12px rgba(255, 105, 180, 0.5), 0 0 30px rgba(255, 105, 180, 0.3);
+        user-select: none;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .heart-center span {
+        opacity: 0;
+        display: inline-block;
+        animation: letterAppear 1s forwards;
+    }
+
+    .heart-center span:nth-child(1) {
+        animation-delay: 0.3s;
+    }
+
+    .heart-center span:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .heart-center span:nth-child(3) {
+        animation-delay: 0.7s;
+    }
+
+    .heart-center span:nth-child(4) {
+        animation-delay: 0.9s;
+    }
+
+    .heart-center span:nth-child(5) {
+        animation-delay: 1.1s;
+    }
+
+    .heart-center span:nth-child(6) {
+        animation-delay: 1.3s;
+    }
+
+    .heart-center span:nth-child(7) {
+        animation-delay: 1.5s;
+    }
+
+    @keyframes letterAppear {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes gentleBeat {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    .quote {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        text-align: center;
+        color: #444;
+        font-style: italic;
+        opacity: 0;
+        animation: fadeInQuote 3s ease-out forwards;
+        animation-delay: 2s;
+    }
+
+    @keyframes fadeInQuote {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .star {
+        position: absolute;
+        font-size: 2rem;
+        animation: sparkle 2.5s ease-out forwards;
+        text-shadow: 0 0 6px rgba(255, 105, 180, 0.7),
+            0 0 12px rgba(255, 192, 203, 0.5);
+    }
+
+    @keyframes sparkle {
+        0% {
+            opacity: 1;
+            transform: scale(1.3) translate(0, 0) rotate(0deg);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(0.4) translate(var(--dx), var(--dy)) rotate(720deg);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .heart-center {
+            font-size: 3rem;
+        }
+
+        .quote {
+            font-size: 1.1rem;
+            padding: 0 20px;
+        }
+    }
